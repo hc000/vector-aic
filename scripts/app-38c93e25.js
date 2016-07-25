@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 if (window.navigator.userAgent.indexOf('MSIE ') !==-1) {
 	alert("You are using an unsupported browser, Internet Explorer (IE). Please use FireFox or Chrome.");
 }
+=======
+if (window.navigator.userAgent.indexOf('IE') !== -1) {
+	alert("You are using this in Internet Explorer (IE). Please use FireFox.");
+}
+
+>>>>>>> master
 /**!
  *
  *  Copyright 2015 Netflix, Inc.
