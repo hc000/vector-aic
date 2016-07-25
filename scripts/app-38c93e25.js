@@ -1,3 +1,7 @@
+if (window.navigator.userAgent.indexOf('IE') !== -1) {
+	alert("You are using this in Internet Explorer (IE). Please use FireFox.");
+}
+
 /**!
  *
  *  Copyright 2015 Netflix, Inc.
