@@ -1,3 +1,33 @@
 <!doctype html><!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]--><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Vector</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" href="favicon.ico" type="image/x-icon"><link rel="icon" href="favicon.ico" type="image/x-icon"><link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet"><link rel="stylesheet" href="styles/vendor-9052cceb.css"><link rel="stylesheet" href="styles/main-0c4cc0e5.css"></head><body ng-app="app"><!--[if lt IE 9]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]--><div ng-view=""></div><script src="scripts/vendors-8775213a.js"></script><script src="scripts/app-38c93e25.js"></script></body></html>
+<![endif]--><div ng-view=""></div><script>
+  var versionIE = detectIE();
+
+if (versionIE === false) {
+	alert("You are using an unsupported browser, Internet Explorer (IE). Please use FireFox or Chrome.");
+}
+
+document.getElementById('details').innerHTML = window.navigator.userAgent;
+
+function detectIE() {
+  var ua = window.navigator.userAgent;
+
+  var msie = ua.indexOf('MSIE ');
+  if (msie > 0) {
+    return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+  }
+
+  var trident = ua.indexOf('Trident/');
+  if (trident > 0) {
+    var rv = ua.indexOf('rv:');
+    return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+  }
+
+  var edge = ua.indexOf('Edge/');
+  if (edge > 0) {
+    return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+  }
+  return false;
+}
+</script>
+<script src="scripts/vendors-8775213a.js"></script><script src="scripts/app-38c93e25.js"></script></body></html>
